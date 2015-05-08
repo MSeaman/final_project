@@ -1,0 +1,13 @@
+<h2><%= @game.name %></h2>
+
+<h1 class="name">
+  <%= @game[:name] %>
+</h1>
+
+<p><img src="<%= @game.boxart %>" width=150 height=150 ></p>
+
+<h2 class="synopsis">
+  <%= @game[:synopsis] %>
+</h2>
+
+<%= link_to 'Back to all games', games_path %>

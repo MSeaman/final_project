@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalProjectApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h1>GameSage</h1>
+<% if current_user %>
+  <p>
+    Welcome back, <%= current_user.username %> |
+    <%= link_to 'Log Out', sessions_path, method: :delete %>
+ </p>
+<% else %>
+  <p>
+    <%= link_to 'Sign Up', new_user_path %> |
+    <%= link_to 'Log In', sessions_new_path %>
+  </p>
+<% end %>
+  <!-- <div id="search-form">
+    <input type="text" id="search-input" placeholder="Search for Games" autofocus="true">
+    <button id="search-button">Search</button>
+  </div>
+  <div id="search-results"></div>
+  <div id="movie-modal">Hello</div> -->
+  <%= form_tag games_search_path, method: :get do %>
+    <%= label_tag 'Search' %>
+    <%= text_field_tag 'Search' %>
+    <%= submit_tag 'Search' %>
+  <%end%>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<% @games.each do |game| %>
+<div id="search-results">
+  <li>
+    <%= game['name'] %> <br>
+    <%= image_tag game['image']['small_url'], style: 'height: 75px; width: 75px;' %>
+   <p> <%= game['deck'] %> </p>
+   <%= button_to [:show, @game] do %>
+      View Game <strong><%= @game.name %></strong>
+    <% end %>
+  </li>
+</div>
+<% end %>
+
