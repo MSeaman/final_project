@@ -7,31 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<h1>GameSage</h1>
-<% if current_user %>
-  <p>
-    Welcome back, <%= current_user.username %> |
-    <%= link_to 'Log Out', sessions_path, method: :delete %>
- </p>
-<% else %>
-  <p>
-    <%= link_to 'Sign Up', new_user_path %> |
-    <%= link_to 'Log In', sessions_new_path %>
-  </p>
-<% end %>
-  <!-- <div id="search-form">
-    <input type="text" id="search-input" placeholder="Search for Games" autofocus="true">
-    <button id="search-button">Search</button>
+<div id="main-header">
+  <div id="header">
+    <h1>GameSage</h1>
   </div>
-  <div id="search-results"></div>
-  <div id="movie-modal">Hello</div> -->
-  <%= form_tag games_search_path, method: :get do %>
-    <%= label_tag 'Search' %>
-    <%= text_field_tag 'Search' %>
-    <%= submit_tag 'Search' %>
-  <%end%>
-
+  <div id="banner">
+  <% if current_user %>  
+      Welcome back, <%= current_user.username %> |
+      <%= link_to 'Log Out', sessions_path, method: :delete %> |
+      <%= link_to 'My Games', games_path, method: :get %> |
+  <% else %>
+      <%= link_to 'Sign Up', new_user_path %> |
+      <%= link_to 'Log In', sessions_new_path %>
+  <% end %>
+    <%= form_tag games_search_path, method: :get do %>
+      <%= label_tag 'Search' %>
+      <%= text_field_tag 'Search' %>
+      <%= submit_tag 'Search' %>
+    <%end%>
+  </div>
+</div>
+<div id="spacer">
+</div>
 <%= yield %>
 
 </body>

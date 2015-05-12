@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: 'application#index'
 
   get 'games/search' => 'games#search'
-  resources :games, only: [:index, :show, :search, :destroy]
-  resources :users, only: [:index, :new, :create]
+  get 'games/one' => 'games#one'
+  resources :games
+  resources :users
 
   # post 'searches' => 'searches#create'
 

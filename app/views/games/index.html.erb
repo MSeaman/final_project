@@ -1,2 +1,13 @@
-WOOOOO
-<%= @game %>
+<div id="games-results">
+<% @games.each do |game| %>
+  <li>
+    <%= game['name'] %> <br>
+    <%= image_tag game['image']['small_url'], style: 'height: 75px; width: 75px;' if game['image']%>
+   <p> <%= game['deck'] %> </p>
+  <%= form_tag games_one_path, method: :get do %>
+   <%= button_tag 'View' %>
+   <%= hidden_field_tag 'gameID', game['id'] %>
+  <% end %>
+  </li>
+<% end %>
+</div>

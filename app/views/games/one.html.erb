@@ -1,6 +1,7 @@
 <div id="single-result">
   <h1><%= @games['name'] %></h1> <br>
-  <%= image_tag @games['image']['small_url'], style: 'height: 150px; width: 150px;' %>
+  <%= image_tag @games['image']['small_url'], style: 'height: 150px; width: 150px;' %> <br>
+  <%= link_to 'Walkthrough', "http://guides.gamepressure.com/?gameguides=search&SEARCH=#{@games['name']}" %>
   <h2> <%= @games['deck'] %> </h2>
   <div id="single-game-image">
     <h2>Screenshots</h2>
@@ -14,5 +15,6 @@
       <%= link_to game['name'], game['site_detail_url'] %> 
     <% end %>
   </div>
-      <%= link_to 'Walkthrough', "http://guides.gamepressure.com/?gameguides=search&SEARCH=#{@games['name']}" %>
 </div>
+
+

@@ -48,6 +48,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'backbars'
   gem 'better_errors'
+  gem 'nokogiri'
 end
 
 

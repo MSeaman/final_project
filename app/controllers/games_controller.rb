@@ -3,35 +3,47 @@ class GamesController < ApplicationController
   before_action :authenticate
 
   def index
-    # @games = Game.all
   end
 
   def search
-    @games = Game.search(params['Search'])
+    @games = Giant.search(params['Search'])
     # render json: games 
   end
 
   def show
-    games = Game.game(params[:id])
-    render json: game
   end
 
-  # def new
-  #   @game = Game.new
-  # end
+  def one
+    @games = Giant.game(params['gameID'])
+  end
 
   # def create
-  #   @game = Game.new(game_params)
-  #   if @game.save
-  #     redirect_to @game
-  #   else
-  #     render :new
-  #   end
+  #   @games = Giant.save_game(params['gameID'])
   # end
 
+  def create
+    @games = Giant.save_game(params['gameID'])
+    # @game = game.new(game_params)
+    # @game.completed = false
 
-  # private
-  # def game_params
-  #   params.require(:game).permit(:name, :boxart, :review, :synopsis, :gameplay_pic, :walkthrough)
-  # end
+    if @game.save
+      respond_to do |format|
+        # format.html { redirect_to '/games' }
+        format.html { redirect_to games_path }
+        format.json { render json: @game }
+      end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: { error: 'BAD STUFF', status: 400 }}
+      end
+    end
+
+  end
+
+
+  private
+  def game_params
+    params.require(:game).permit(:name, :boxart, :synopsis) #:review, #:gameplay_pic, :walkthrough)
+  end
 end
