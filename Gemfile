@@ -49,6 +49,7 @@ group :development, :test do
   gem 'backbars'
   gem 'better_errors'
   gem 'nokogiri'
+  gem 'ratyrate'
 end
 
 

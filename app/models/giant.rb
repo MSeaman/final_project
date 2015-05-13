@@ -22,8 +22,9 @@ class Giant
     games = parsed_response["results"] || []
     Game.new(
     name: games["name"] || 'unknown',
+    boxart: games["image"]["small_url"] || 'unknown',
     synopsis: games["deck"] || 'unknown',
-    boxart: games["image"]["small url"] || 'unknown'
+    api_id: games["id"]
     )
   end
 

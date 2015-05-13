@@ -132,6 +132,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    ratyrate (1.2.2.alpha)
     rdoc (4.2.0)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
@@ -204,6 +205,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-assets-backbone!
   rails-assets-underscore!
+  ratyrate
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   root to: 'application#index'
 
   get 'games/search' => 'games#search'

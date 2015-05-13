@@ -1,20 +1,24 @@
 <div id="single-result">
-  <h1><%= @games['name'] %></h1> <br>
-  <%= image_tag @games['image']['small_url'], style: 'height: 150px; width: 150px;' %> <br>
-  <%= link_to 'Walkthrough', "http://guides.gamepressure.com/?gameguides=search&SEARCH=#{@games['name']}" %>
-  <h2> <%= @games['deck'] %> </h2>
+  <div id='single-pic'><%= image_tag @games['image']['small_url'], style: 'height: 300px; width: 300px;' %></div>
+  <div id='single-info'>
+    <h1><%= @games['name'] %></h1> <br>
+    <h2> <%= @games['deck'] %> </h2>
+    <h2> ***<%= link_to 'Walkthrough', "http://guides.gamepressure.com/?gameguides=search&SEARCH=#{@games['name']}" %>***</h2>
+  </div>
   <div id="single-game-image">
     <h2>Screenshots</h2>
     <% @games['images'].each do |game| %>
       <%= link_to image_tag(game['super_url'], style: 'height: 150px; width: 150px;'), game['super_url'] %>
     <% end %>
   </div>
-  <div id ="character">
     <h2>Characters</h2>
-    <% @games['characters'].each do |game| %>
-      <%= link_to game['name'], game['site_detail_url'] %> 
+  <ul id ="characters">
+  <% if @games['characters'] %>
+    <li><% @games['characters'].each do |game| %>
+      <%= link_to game['name'], game['site_detail_url'] %> <li>
     <% end %>
-  </div>
+  <% end %>
+  </ul>
 </div>
 
 

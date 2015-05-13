@@ -7,6 +7,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :synopsis
       t.string :gameplay_pic
       t.string :walkthrough
+      t.string :api_id
 
       t.timestamps
     end
