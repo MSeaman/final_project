@@ -49,8 +49,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'nokogiri'
   gem 'ratyrate'
+  gem 'rails_12factor', group: :production
+
 end
 
-
-gem 'rails-assets-underscore', source: 'https://rails-assets.org'
-gem 'rails-assets-backbone', source: 'https://rails-assets.org'
+ruby "2.2.1"

@@ -21,7 +21,7 @@ body {
   background-image: url('/assets/background.jpg');
 }
 #search-results li:hover {
-  background: #ffffcc;;
+  background: #ffffcc;
 }
 #search-results li {
   padding: 5px;
@@ -34,7 +34,7 @@ body {
   padding:10px;
 }
 #game-results li:hover {
-  background: #ffffcc;;
+  background: #ffffcc;
 }
 #game-results li {
   padding: 5px;
