@@ -46,7 +46,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'backbars'
   gem 'better_errors'
   gem 'nokogiri'
   gem 'ratyrate'
