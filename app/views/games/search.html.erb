@@ -1,7 +1,7 @@
 <ul id="search-results">
 <% @games.each do |game| %>
   <li>
-    <h2><%= game['name'] %></h2> <br>
+    <h3><%= game['name'] %></h3> <br>
    <img class="index-image"> <%= image_tag game['image']['small_url'], style: 'height: 75px; width: 75px;' if game['image']%></img>
    <p> <%= game['deck'] %> </p>
   <%= form_tag games_one_path, method: :get do %>

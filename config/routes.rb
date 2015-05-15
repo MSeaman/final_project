@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
   root to: 'application#index'
 
   get 'games/search' => 'games#search'
@@ -15,4 +14,5 @@ Rails.application.routes.draw do
   post 'sessions' => 'sessions#create'
   # logging out the user
   delete 'sessions' => 'sessions#destroy'
+  post '/rate' => 'rater#create', :as => 'rate'
 end
