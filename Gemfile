@@ -48,7 +48,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'better_errors'
   gem 'nokogiri'
-  gem 'ratyrate'
   gem 'rails_12factor', group: :production
 
 end
