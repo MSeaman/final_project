@@ -2,7 +2,6 @@
 <% @games.each do |game| %>
   <li>
     <h3><%= game.name %></h3> <br>
-    Rating: <%= rating_for game, "overall" %>
     <%= image_tag game.boxart, style: 'height: 75px; width: 75px;' if game.boxart%>
    <p> <%= game.synopsis %> </p>
   <%= form_tag games_one_path, method: :get do %>
